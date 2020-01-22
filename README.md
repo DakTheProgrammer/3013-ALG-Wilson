@@ -3,6 +3,6 @@
 #### Email: dtw3200@live.com
 #### Website: None
 #### Image:
-![Albert Einstein](https://cs.msutexas.edu/~griffin/zcloud/zcloud-files/einstein.png)
+<img src="GitPic.png" width="300">
 #### Avatar:
-![Avatar](https://cs.msutexas.edu/~griffin/zcloud/zcloud-files/einstein_avatar.png)
+<img src="SlackPic.png" width="300">
