@@ -8,19 +8,24 @@
 // Semester:         Spring 2020
 //
 // Description:
-//       describe program here thoroughly 
-//
+//       This program is used to make linked lists of intigers in a fashion 
+//      that is easy to output and compine them. This is done trough the 
+//      functionality of the overloaded opperators of "+,<<,[]". These 
+//      operators allow the user to find values at certain positions in a 
+//      list, combine 2 lists and output a entire list as a string.
+//      
 // Usage:
-//       how to use the program if necessary
+//         None
 //
-// Files:            NONE
+// Files:            
+//      main(commented).cpp
 /////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int A[100];
+int A[100];     //array of 100 integers
 
 /**
  * Node
@@ -29,56 +34,56 @@ int A[100];
  *      makes a structured node with a int value and a pointer to a node type
  * 
  * Public Methods:
+ *      int     x;
+ *      Node    *next;
  *              Node()
  *              Node(int n)
  * 
  * Usage: 
  * 
- *      Node()        //makes a node that points to NULL and sets its stored
- *                    //value to -1
+ *      Node N1;        //makes a node that points to NULL and sets its stored
+ *                      //value to -1
  *                     
- *                    //or
+ *                      //or
  * 
- *      Node(5)       //makes a node that points to NULL and sets its stored
- *                    //value to 5
+ *      Node N2(5)      //makes a node that points to NULL and sets its stored
+ *                      //value to 5
+ *      N2.next = NULL  //sets the next pointer in the node to NULL
+ *      
  *      
  */
 struct Node {
-    int x;
-    Node *next;
+    int x;          //int value of node
+    Node *next;     //pointer to point to another node
     /**
-     * Public/Private/Protected : function_name
+     * Public: Node()
      * 
      * Description:
-     *      Describe the functions purpose
+     *      this is a default constructor thata sets defaults for the nodes 
+     *      value and pointer
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
     Node() {
         x = -1;
         next = NULL;
     }
     /**
-     * Public/Private/Protected : function_name
+     * Public: Node(int n)
      * 
      * Description:
-     *      Describe the functions purpose
+     *      This is a perameterized constructor that takes in an int to store 
+     *      it in a node
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      int     :   value to store in node
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
     Node(int n) {
         x = n;
@@ -87,48 +92,59 @@ struct Node {
 };
 
 /**
- * Class Name
+ * List
  * 
  * Description:
- *      Description of your class and what it does
+ *      A simple singly linked list class
  * 
  * Public Methods:
- *      - A list of 
- *      - each public method
- *      - with return types
- * 
+ *                      List() 
+ *      void            Push(int val)
+ *      void            Insert(int val) 
+ *      void            PrintTail()
+ *      string          Print()
+ *      int             Pop()
+ *      List            operator+(const List &Rhs)
+ *      int             operator[](int index)
+ *      friend ostream  &operator<<(ostream &os, List L)
+ *      
  * Private Methods:
- *      - A list of 
- *      - each private method
- *      - with return types
+ *      Node        *Head;
+ *      Node        *Tail;
+ *      int         Size;
  * 
  * Usage: 
  * 
- *      - examples of how
- *      - to use your class 
- *      
+ *      List L1,L2          //creates 2 lists of integers
+ *      L1.Push(5)          //pushes 5 onto the end of the list 
+ *      L1.Insert(23)       //inserts 23 before the head of the list
+ *      L1.Pop()            //removes tail value from list
+ *      L1.PrintTail()      //prints the value at the last node of the list
+ *      L1.Print()          //Prints the list
+ *      List L3 = L1 + L2   //makes a new list where the values of the right
+ *                          // list is added to the tail of the left list
+ *      List L1[3]          //gets the value in the 3rd position in the list
+ *      cout << L1          //prints all the values in that list in order
+ * 
  */
 class List {
 private:
-    Node *Head;
-    Node *Tail;
-    int Size;
+    Node *Head;     //node pointer for head of list
+    Node *Tail;     //node pointer for tail of list
+    int Size;       //int for size of list
 
 public:
     /**
-     * Public/Private/Protected : function_name
+     * Public: List()
      * 
      * Description:
-     *      Describe the functions purpose
+     *      Default constructor that makes a list of NULL and sets size to 0
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
     List() {
         Head = Tail = NULL;
@@ -136,19 +152,16 @@ public:
     }
 
     /**
-     * Public/Private/Protected : function_name
+     * Public: Push(int val)
      * 
      * Description:
-     *      Describe the functions purpose
+     *      Pushes a value to the end of the list
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      int val     //a value to put into the node
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
     void Push(int val) {
         // allocate new memory and init node
@@ -164,19 +177,16 @@ public:
     }
 
     /**
-     * Public/Private/Protected : function_name
+     * Public: Insert(int val)
      * 
      * Description:
      *      Describe the functions purpose
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      int val     //a value to put into the node
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
     void Insert(int val) {
         // allocate new memory and init node
@@ -193,19 +203,16 @@ public:
     }
 
     /**
-     * Public/Private/Protected : function_name
+     * Public: PrintTail()
      * 
      * Description:
-     *      Describe the functions purpose
+     *      Prints the tail value
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      none
      */
     void PrintTail() {
         cout << Tail->x << endl;
@@ -215,16 +222,14 @@ public:
      * Public/Private/Protected : function_name
      * 
      * Description:
-     *      Describe the functions purpose
+     *      creates a string that has all of the values of the list in it
+     *      so that it can be printed
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      string  :   a string of values from the list
      */
     string Print() {
         Node *Temp = Head;
@@ -239,19 +244,16 @@ public:
     }
 
     /**
-     * Public/Private/Protected : function_name
+     * Public: Pop()
      * 
      * Description:
-     *      Describe the functions purpose
+     *      removes the tail node from the list
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      Int :   the value in the removed node
      */
     // not implemented
     int Pop() {
@@ -260,19 +262,17 @@ public:
     }
 
     /**
-     * Public/Private/Protected : function_name
+     * Public: operator+(const List &Rhs)
      * 
      * Description:
-     *      Describe the functions purpose
+     *      allowes user to combine 2 lists into a single list
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      const List       &Rhs
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      List    :   Returns a list that has the head of the right list
+     *                  attached to the tail of the left list
      */
     List operator+(const List &Rhs) {
         // Create a new list that will contain both when done
@@ -301,19 +301,17 @@ public:
     }
 
     /**
-     * Public/Private/Protected : function_name
+     * Public: operator[](int index)
      * 
      * Description:
-     *      Describe the functions purpose
+     *      This method allows the user to get the value at a position 
+     *      in the list
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      int     index
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      int :   This function returns the int value at a given index
      */
     // Implementation of [] operator.  This function returns an
     // int value as if the list were an array.
@@ -333,19 +331,19 @@ public:
     }
 
     /**
-     * Public/Private/Protected : function_name
+     * Friend : ostream &operator<<(ostream &os, List L)
      * 
      * Description:
-     *      Describe the functions purpose
+     *      allows the user to output the list with os commands 
+     *      like cout << L1;
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      ostream     &os
+     *      List        L
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      ostream :   returns the string made from print to be used 
+     *                  with the '<<' operator
      */
     friend ostream &operator<<(ostream &os, List L) {
         os << L.Print();
@@ -354,24 +352,24 @@ public:
 };
 
 int main(int argc, char **argv) {
-    List L1;
+    List L1;                            //makes 2 lists to store ints
     List L2;
 
     for (int i = 0; i < 25; i++) {
-        L1.Push(i);
+        L1.Push(i);                     //pushes 1-24 to list 1
     }
 
     for (int i = 50; i < 100; i++) {
-        L2.Push(i);
+        L2.Push(i);                     //pushes 50-99 to list 2
     }
 
     //cout << L1 << endl;
-    L1.PrintTail();
-    L2.PrintTail();
+    L1.PrintTail();                     //prints tail of list 1
+    L2.PrintTail();                     //prints tail of list 2
 
-    List L3 = L1 + L2;
-    cout << L3 << endl;
+    List L3 = L1 + L2;                  //combines both lists
+    cout << L3 << endl;                 //outputs combined list
 
-    cout << L3[5] << endl;
+    cout << L3[5] << endl;              //outputs position 5 in combined list
     return 0;
 }
