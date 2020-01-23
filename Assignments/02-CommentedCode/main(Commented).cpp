@@ -22,19 +22,92 @@ using namespace std;
 
 int A[100];
 
+/**
+ * Node
+ * 
+ * Description:
+ *      makes a structured node with a int value and a pointer to a node type
+ * 
+ * Public Methods:
+ *              Node()
+ *              Node(int n)
+ * 
+ * Usage: 
+ * 
+ *      Node()        //makes a node that points to NULL and sets its stored
+ *                    //value to -1
+ *                     
+ *                    //or
+ * 
+ *      Node(5)       //makes a node that points to NULL and sets its stored
+ *                    //value to 5
+ *      
+ */
 struct Node {
     int x;
     Node *next;
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     Node() {
         x = -1;
         next = NULL;
     }
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     Node(int n) {
         x = n;
         next = NULL;
     }
 };
 
+/**
+ * Class Name
+ * 
+ * Description:
+ *      Description of your class and what it does
+ * 
+ * Public Methods:
+ *      - A list of 
+ *      - each public method
+ *      - with return types
+ * 
+ * Private Methods:
+ *      - A list of 
+ *      - each private method
+ *      - with return types
+ * 
+ * Usage: 
+ * 
+ *      - examples of how
+ *      - to use your class 
+ *      
+ */
 class List {
 private:
     Node *Head;
@@ -42,11 +115,41 @@ private:
     int Size;
 
 public:
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     List() {
         Head = Tail = NULL;
         Size = 0;
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     void Push(int val) {
         // allocate new memory and init node
         Node *Temp = new Node(val);
@@ -60,6 +163,21 @@ public:
         Size++;
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     void Insert(int val) {
         // allocate new memory and init node
         Node *Temp = new Node(val);
@@ -74,10 +192,40 @@ public:
         Size++;
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     void PrintTail() {
         cout << Tail->x << endl;
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     string Print() {
         Node *Temp = Head;
         string list;
@@ -90,12 +238,42 @@ public:
         return list;
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     // not implemented
     int Pop() {
         Size--;
         return 0; //
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     List operator+(const List &Rhs) {
         // Create a new list that will contain both when done
         List NewList;
@@ -122,6 +300,21 @@ public:
         return NewList;
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     // Implementation of [] operator.  This function returns an
     // int value as if the list were an array.
     int operator[](int index) {
@@ -139,6 +332,21 @@ public:
         }
     }
 
+    /**
+     * Public/Private/Protected : function_name
+     * 
+     * Description:
+     *      Describe the functions purpose
+     * 
+     * Params:
+     *      - list params
+     *      - one per line
+     *      - with return type
+     *      - and one line description
+     * 
+     * Returns:
+     *      - what does this function return (including the type)?
+     */
     friend ostream &operator<<(ostream &os, List L) {
         os << L.Print();
         return os;
