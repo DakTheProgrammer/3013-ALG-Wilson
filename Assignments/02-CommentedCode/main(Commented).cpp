@@ -1,4 +1,22 @@
+///////////////////////////////////////////////////////////////////////////////
+//                   
+// Author:           Dakota Wilson
+// Email:            dtw3200@live.com
+// Label:            02-CommentedCode
+// Title:            Assignment 2 - Commenting C++ Code
+// Course:           CMPS-3013-201
+// Semester:         Spring 2020
+//
+// Description:
+//       describe program here thoroughly 
+//
+// Usage:
+//       how to use the program if necessary
+//
+// Files:            NONE
+/////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
+#include <string>
 
 using namespace std;
 
