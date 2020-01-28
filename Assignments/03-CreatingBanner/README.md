@@ -1,1 +1,1 @@
-## Created a banner for programms
+## Created a banner for programs
