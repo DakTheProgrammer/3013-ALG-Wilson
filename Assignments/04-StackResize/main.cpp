@@ -13,6 +13,7 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -223,21 +224,16 @@ public:
 
 // MAIN DRIVER
 // Simple Array Based Stack Usage:
-int main() {
-  ArrayStack stack;
-  int r = 0;
-
-  for(int i=0;i<20;i++){
-    r = rand() % 100;
-    r = i+1;
-    if(!stack.Push(r)){
-      cout<<"Push failed"<<endl;
-    }
-  }
-
-  for(int i=0;i<7;i++){
-    stack.Pop();
-  }
-
-  stack.Print();
+int main() 
+{
+	ArrayStack stack;
+	
+	cout << "################################################################\n";
+	cout << "\tAssignment 4 - Resizing the Stack\n";
+	cout << "\tCMPS 3013\n";
+	cout << "\tDakota Wilson\n\n";
+	cout << "\tMax Stack Size: xxxx\n";
+	cout << "\tEnd Stack Size: xxxx\n";
+	cout << "\tStack Resized:  xxxx Times\n\n";
+	cout << "################################################################\n";
 }
