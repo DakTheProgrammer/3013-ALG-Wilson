@@ -1,15 +1,19 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 //
-// Author:           Terry Griffin
-// Email:            terry.griffin@msutexas.edu
-// Label:            L01
-// Title:            Lecture 01 - Array Based Stack
+// Author:           Dakota Wilson
+// Email:            dtw3200@live.com
+// Label:            P01
+// Title:            Assignment 4 - Resizing the Stack
 // Course:           3013
 // Semester:         Spring 2020
 //
 // Description:
-//       Overview of a class implementing an array based stack
+//       Resizeable stack that when the stack goes to half size it will shrink by
+//		half. Also will increas by 175% when it is full to prevent overflow. The
+//		program reads in a file of even and odd numbers when a even number is
+//		it is pushed and when a odd is read the top number is popped off the
+//		stack.
 //
 /////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
@@ -35,8 +39,8 @@ private:
 	int* A;           // pointer to array of int's
 	int size;         // current max stack size
 	int top;          // top of stack 
-	int timesResized; 
-	int MaxSize;
+	int timesResized; // times stack resized
+	int MaxSize;	  // the max size the stack reaches
 
 public:
 	/**
@@ -137,6 +141,7 @@ public:
 	 *
 	 * Description:
 	 *      Returns top value and removes it from stack
+	 *		also checks if it needs to be resized
 	 *
 	 * Params:
 	 *      NULL
@@ -179,7 +184,8 @@ public:
 	 * Public bool: Push
 	 *
 	 * Description:
-	 *      Adds an item to top of stack
+	 *      Adds an item to top of stack and checks 
+	 *		if resize is needed
 	 *
 	 * Params:
 	 *      [int] : item to be added
@@ -189,17 +195,16 @@ public:
 	 */
 	bool Push(int x)
 	{
-		CheckResize();
-
 		A[++top] = x;
+		CheckResize();
 		return true;
 	}
 
 	/**
-	 * Public void: Resize
+	 * Public void: ContainerGrow
 	 *
 	 * Description:
-	 *      Resizes the container for the stack by doubling
+	 *      Resizes the container for the stack by 1.75 
 	 *      its capacity
 	 *
 	 * Params:
@@ -210,7 +215,7 @@ public:
 	 */
 	void ContainerGrow()
 	{
-		int newSize = size * 1.75;				// double size of original
+		int newSize = size * 1.75;			// 175% size of original
 		int* B = new int[newSize];			// allocate new memory
 
 		for (int i = 0; i < size; i++) {    // copy values to new array
@@ -225,10 +230,24 @@ public:
 
 		if (MaxSize < newSize)
 		{
-			MaxSize = size;
+			MaxSize = size;					// checks if maxsize needs 
+											// increase
 		}
 	}
 
+	/**
+	 * Public void: ContainerShrink
+	 *
+	 * Description:
+	 *      Resizes the container for the stack by .5
+	 *      its capacity
+	 *
+	 * Params:
+	 *      NULL
+	 *
+	 * Returns:
+	 *      NULL
+	 */
 	void ContainerShrink()
 	{
 		int newSize = size / 2;				// halves size of original
@@ -245,37 +264,95 @@ public:
 		A = B;								// reset array pointer
 	}
 
+	/**
+	 * Public void: CheckResize
+	 *
+	 * Description:
+	 *      checks if the stack needs to be resized
+	 *
+	 * Params:
+	 *      NULL
+	 *
+	 * Returns:
+	 *      NULL
+	 */
 	void CheckResize()
 	{
 		if (Full())
 		{
-			ContainerGrow();
-			timesResized++;
-			//cout << "Increasing ";
+			ContainerGrow();			//shrinks
+			timesResized++;				//increments times resized
 		}
-		else if (top < (size / 4) && size > 10)
+		else if (top < (size / 2) && size > 10)
 		{
-			ContainerShrink();
-			timesResized++;
-			//cout << "Decreasing ";
+			ContainerShrink();			//grows
+			timesResized++;				//increments times resized
 		}
 	}
 
+	/**
+	 * Public void: getSize
+	 *
+	 * Description:
+	 *      gets the size of the stack
+	 *
+	 * Params:
+	 *      NULL
+	 *
+	 * Returns:
+	 *      NULL
+	 */
 	int getSize()
 	{
 		return size;
 	}
 
+	/**
+	 * Public void: getTimesResized
+	 *
+	 * Description:
+	 *      gets the times the stack was resized
+	 *
+	 * Params:
+	 *      NULL
+	 *
+	 * Returns:
+	 *      NULL
+	 */
 	int getTimesResized()
 	{
 		return timesResized;
 	}
 
+	/**
+	 * Public void: getMaxSize
+	 *
+	 * Description:
+	 *      gets the max size of the stack
+	 *
+	 * Params:
+	 *      NULL
+	 *
+	 * Returns:
+	 *      NULL
+	 */
 	int getMaxSize()
 	{
 		return MaxSize;
 	}
 
+	/**
+	 * Public void: getMaxSize
+	 *
+	 * Description:
+	 *      gets the top of the stack
+	 *
+	 * Params:
+	 *      NULL
+	 *
+	 * Returns:
+	 *      NULL
+	 */
 	int getTop()
 	{
 		return top;
@@ -289,23 +366,20 @@ int main()
 	ArrayStack stack;
 	ifstream infile;
 	infile.open("nums.dat");
-	ofstream outfile;
-	outfile.open("Trace.txt");
 
 	int num;
 
 	while (!infile.eof())
 	{
 		infile >> num;
-		if (num % 2 == 0)
+		if (num % 2 == 0)		//pushes evens
 		{
 			stack.Push(num);
 		}
-		else
+		else					//pops when odd is read
 		{
 			stack.Pop();
 		}
-		outfile << "top:" << stack.getTop() << " Size: " << stack.getSize() << '\n';
 	}
 	
 	
@@ -315,7 +389,7 @@ int main()
 	cout << "\tCMPS 3013\n";
 	cout << "\tDakota Wilson\n\n";
 	cout << "\tMax Stack Size: " << stack.getMaxSize() << "\n";
-	cout << "\tEnd Stack Size: " << stack.getSize() <<"\n";
+	cout << "\tEnd Stack Size: " << stack.getSize() << "\n";
 	cout << "\tStack Resized:  " << stack.getTimesResized() << " Times\n\n";
 	cout << "################################################################\n";
 }
