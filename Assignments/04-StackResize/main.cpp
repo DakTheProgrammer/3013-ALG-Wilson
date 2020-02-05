@@ -365,7 +365,9 @@ int main()
 {
 	ArrayStack stack;
 	ifstream infile;
+	ofstream outfile;
 	infile.open("nums.dat");
+	outfile.open("output.txt");
 
 	int num;
 
@@ -384,12 +386,12 @@ int main()
 	
 	
 
-	cout << "################################################################\n";
-	cout << "\tAssignment 4 - Resizing the Stack\n";
-	cout << "\tCMPS 3013\n";
-	cout << "\tDakota Wilson\n\n";
-	cout << "\tMax Stack Size: " << stack.getMaxSize() << "\n";
-	cout << "\tEnd Stack Size: " << stack.getSize() << "\n";
-	cout << "\tStack Resized:  " << stack.getTimesResized() << " Times\n\n";
-	cout << "################################################################\n";
+	outfile << "################################################################\n";
+	outfile << "\tAssignment 4 - Resizing the Stack\n";
+	outfile << "\tCMPS 3013\n";
+	outfile << "\tDakota Wilson\n\n";
+	outfile << "\tMax Stack Size: " << stack.getMaxSize() << "\n";
+	outfile << "\tEnd Stack Size: " << stack.getSize() << "\n";
+	outfile << "\tStack Resized:  " << stack.getTimesResized() << " Times\n\n";
+	outfile << "################################################################\n";
 }
