@@ -363,22 +363,22 @@ public:
 // Simple Array Based Stack Usage:
 int main()
 {
-	ArrayStack stack;
-	ifstream infile;
-	ofstream outfile;
-	infile.open("nums.dat");
+	ArrayStack stack;				//stack for resizing
+	ifstream infile;				//infile for input
+	ofstream outfile;				//outfile for output
+	infile.open("nums_test.dat");
 	outfile.open("output.txt");
 
-	int num;
+	int num;						//num to put into stack or to read a pop
 
 	while (!infile.eof())
 	{
 		infile >> num;
-		if (num % 2 == 0)		//pushes evens
+		if (num % 2 == 0)			//pushes evens
 		{
 			stack.Push(num);
 		}
-		else					//pops when odd is read
+		else						//pops when odd is read
 		{
 			stack.Pop();
 		}
