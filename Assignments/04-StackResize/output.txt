@@ -4,7 +4,7 @@
 	Dakota Wilson
 
 	Max Stack Size: 40831
-	End Stack Size: 6
+	End Stack Size: 10
 	Stack Resized:  33 Times
 
 ################################################################

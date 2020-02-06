@@ -251,6 +251,10 @@ public:
 	void ContainerShrink()
 	{
 		int newSize = size / 2;				// halves size of original
+		if (newSize < 10)
+		{
+			newSize = 10;
+		}
 		int* B = new int[newSize];			// allocate new memory
 
 		for (int i = 0; i <= top; i++) {    // copy values to new array
