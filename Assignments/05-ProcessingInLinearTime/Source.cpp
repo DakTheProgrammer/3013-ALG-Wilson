@@ -26,18 +26,31 @@ int main()
         LList.insert(DicWord, DicDef);
     }
 
-    LList.print();
+    cout << "To exit program press capital Z\n\n\n";
 
-    /*while ((Typed = getch()) != 'Z') 
+    while ((Typed = getch()) != 'Z') 
     {
-        word += Typed;          
+        Timer T;
+        T.Start();
+        word += Typed;
+
+        
 
         if((int)Typed != 10)
-        {   // if k is not a space print it
-            cout << Typed;
+        {   // if Typed is not a space print it
+            cout << word << "\n\n";
         }
+        LList.search(word);
+
+        T.End();
+        double s = T.Seconds();
+
+        cout << LList.getTermsFound() << " words found in: " << s << " Seconds\n\n";
+
+        LList.printTenWords();
+
+        cout <<"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     }
-    */
 
     return 0;
 }

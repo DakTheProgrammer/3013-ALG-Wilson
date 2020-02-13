@@ -18,7 +18,8 @@ private:
 	Node* Head;
 	Node* Tail;
 	int length;
-	
+	string TenWords[10];
+	int TermsFound;
 
 public:
 	
@@ -27,6 +28,11 @@ public:
 		Head = nullptr;
 		Tail = nullptr;
 		length = 0;
+		TermsFound = 0;
+		for(int i = 0; i < 10; i++)
+		{
+			TenWords[i] = "ZZZ";
+		}
 	}
 
 	void insert(string W, string D)
@@ -66,7 +72,64 @@ public:
 			outfile << temp->Word << " - " << temp->definition << '\n';
 			temp = temp->next;
 		}
-		delete temp;
+		temp = nullptr;
 	}
+
+	void search(string input)
+	{
+		int timeSeen = 0;
+		Node* temp = new Node;	
+		temp = Head;
+		int i = 0;
+		while (temp != nullptr)
+		{
+			string check = temp->Word;
+
+			size_t found = check.find(input);
+
+			if (found != string::npos)
+			{
+				if(i < 10)
+				{
+					TenWords[i] = temp->Word;
+					i++;
+				}
+				timeSeen++;
+			}
+
+			temp = temp->next;
+		}
+		TermsFound = timeSeen; 
+		temp = nullptr;
+	}
+
+	void printTenWords()
+	{
+		bool printed = false;
+		for(int i = 0; i < 10; i++)
+		{
+			if(TenWords[i] != "ZZZ")
+			{
+				printed = true;
+				cout << TenWords[i] << ' ';
+			}
+			else if(!printed)
+			{
+				cout << "No matches";
+				printed = true;
+			}
+		}
+		cout << '\n';
+		for(int i = 0; i < 10; i++)
+		{
+			TenWords[i] = "ZZZ";
+		}
+	}
+
+	int getTermsFound()
+	{
+		return TermsFound;
+	}
+	
 
 };
