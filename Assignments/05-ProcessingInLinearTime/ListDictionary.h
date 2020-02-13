@@ -69,7 +69,7 @@ public:
 		temp = Head;
 		while (temp != nullptr)
 		{
-			outfile << temp->Word << " - " << temp->definition << '\n';
+			outfile << '|' << temp->Word << "| -> (" << temp->definition << ")\n";
 			temp = temp->next;
 		}
 		temp = nullptr;
@@ -111,7 +111,7 @@ public:
 			if(TenWords[i] != "ZZZ")
 			{
 				printed = true;
-				cout << TenWords[i] << ' ';
+				cout << TenWords[i] << " -> ";
 			}
 			else if(!printed)
 			{
