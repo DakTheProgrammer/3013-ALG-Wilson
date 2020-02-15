@@ -1,3 +1,19 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// Author:           Dakota Wilson
+// Email:            dtw3200@live.com
+// Label:            HW-4
+// Title:            Assignment 7 - Heapify
+// Course:           3013
+// Semester:         Spring 2020
+//
+// Description:
+//      An array based min heap that is sorted whenever a item is inserted and
+//  removed by using a bubble up and bubble down method. also allows the user to
+//  "heapify" an array into a heap and is sorted with the bubble up method when
+//  inserted.
+//
+/////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 
 using namespace std;
@@ -10,19 +26,20 @@ using namespace std;
  *          Heap        : default constructor
  *          Heap(int)   : overload constructor with heap size
  *      private:
- *          BubbleUp    : you comment this
- *          Left        : you comment this
- *          OnHeap      : you comment this
- *          Parent      : you comment this
- *          Right       : you comment this
- *          Swap        : you comment this
+ *          BubbleUp    : used to sort whenever a item is inserted
+ *          Left        : used to check the index left of asked index
+ *          OnHeap      : checks if index is in the heap or not
+ *          Parent      : gets the index of the parent of the asked index
+ *          Right       : used to check the index rigth of asked index
+ *          Swap        : swaps 2 values in the heap based on there index
  *          /// Fix These:
- *          SinkDown    : you comment this
- *          PickChild   : you comment this
+ *          SinkDown    : used to sort the heap whenever a item is removed
+ *          PickChild   : Picks the smallest child of its parents
+ *          Heapify     : sorts a array into the heap by using bubble up to sort
  *      public:
- *          Insert      : you comment this
- *          Print       : you comment this
- *          Remove      : you comment this
+ *          Insert      : places a item into the heap
+ *          Print       : prints the values in the array heap
+ *          Remove      : removes the root of the heap
  */
 class Heap {
 private:
@@ -123,9 +140,15 @@ private:
     ////////////////////////////
 
     /**
+     * Heapify
+     * @description:
+     *      takes in an array and inserts them into the heap. Is sorted
+     *      by the bubble up method used in the insert method.
      * 
      * @param  {int*} A   :  array pointer with unsorted values to make into a heap
      * @param  {int} size :  size of new heap
+     * 
+     * @return            : void 
      */
     void Heapify(int* A, int s) {
         for(int i = 0; i < s; i++)
@@ -170,17 +193,17 @@ private:
     int PickChild(int index) {
         if(Right(index) == end)
         {
-            return H[Left(index)];
+            return H[Left(index)];          //if only 1 child
         }
         else if(Left(index) < end)
         {
             if(H[Left(index)] < H[Right(index)])
             {
-                return H[Left(index)];
+                return H[Left(index)];      //left child smaller
             }
             else
             {
-                return H[Right(index)];
+                return H[Right(index)];     //right child smaller
             }
         }
         else
@@ -248,9 +271,8 @@ public:
     int Remove() {
         int temp = H[1];
         H[1] = H[--end];
-        SinkDown(1);
+        SinkDown(1);            //sinks down starting at position 1
 
-        //cout << PickChild(5);
         return temp;
     }
 
