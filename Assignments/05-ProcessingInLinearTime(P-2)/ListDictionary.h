@@ -84,28 +84,25 @@ struct Node
 class ListDictionary
 {
 private:
-	Node* Head;				//pointer to the head of the list
-	Node* Tail;				//pointer to the tail of the list
-	int length;				//length of the list
-	string TenWords[10];	//top ten words found when searching the list
-	int TermsFound;			//how many items found after searching list
+	Node* Head;					//pointer to the head of the list
+	Node* Tail;					//pointer to the tail of the list
+	int length;					//length of the list
+	string TenWords[10];		//top ten words found when searching the list
+	int TermsFound;				//how many items found after searching list
 
 public:
 	
 	/**
-     * Public/Private/Protected : function_name
+     * constructor : function_name
      * 
      * Description:
-     *      Describe the functions purpose
+     *      loads private variables with default values
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
 	ListDictionary()
 	{
@@ -120,19 +117,18 @@ public:
 	}
 
 	/**
-     * Public/Private/Protected : function_name
+     * Public : insert(string W, string D)
      * 
      * Description:
-     *      Describe the functions purpose
+     *      places a new node onto the list with a 
+	 * 		given word and deginition
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *     	string W			//string for word
+	 * 		string D			//string for definition
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *     	None
      */
 	void insert(string W, string D)
 	{
@@ -161,19 +157,16 @@ public:
 	}
 
 	/**
-     * Public/Private/Protected : function_name
+     * Public : print()
      * 
      * Description:
-     *      Describe the functions purpose
+     *      prints the list onto a file "Checking.txt"
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      none
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *     None
      */
 	void print()
 	{
@@ -183,26 +176,26 @@ public:
 		temp = Head;
 		while (temp != nullptr)
 		{
-			outfile << '|' << temp->Word << "| -> (" << temp->definition << ")\n";
+			outfile << '|' << temp->Word << "| -> (" << temp->definition 
+				<< ")\n";
 			temp = temp->next;
 		}
 		temp = nullptr;
 	}
 
 	/**
-     * Public/Private/Protected : function_name
+     * Public: search(string input)
      * 
      * Description:
-     *      Describe the functions purpose
+     *      Looks into the list for substrings of the given 
+	 * 		string and also loads the first ten similar strings 
+	 *      into an array. Also gets increments terms found
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      string input		//a given string for searching substrings
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
 	void search(string input)
 	{
@@ -233,19 +226,17 @@ public:
 	}
 
 	/**
-     * Public/Private/Protected : function_name
+     * Public : printTenWords()
      * 
      * Description:
-     *      Describe the functions purpose
+     *      Prints the top 10 results from "search" to 
+	 * 		the screen
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      None
      */
 	void printTenWords()
 	{
@@ -271,19 +262,16 @@ public:
 	}
 
 	/**
-     * Public/Private/Protected : function_name
+     * Public : getTermsFound()
      * 
      * Description:
-     *      Describe the functions purpose
+     *      gets the amount of terms found from the search
      * 
      * Params:
-     *      - list params
-     *      - one per line
-     *      - with return type
-     *      - and one line description
+     *      None
      * 
      * Returns:
-     *      - what does this function return (including the type)?
+     *      return TermsFound	//the amount of terms found from search()
      */
 	int getTermsFound()
 	{
