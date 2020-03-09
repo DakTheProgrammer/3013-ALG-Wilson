@@ -9,19 +9,19 @@
 - Complexities : **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!) , O(h)**
 <ol>
     <li>Finding the max element in an unordered stack would require _____O(n)______ operations?
-        <br><b>Reason</b>: You would have to look through all elements possibly.</li>
+        <li><br><b>Reason</b>: You would have to look through all elements possibly.</li></li>
     <li>Finding the min element in an unordered queue would require _____O(n)______ operations?
-        <br><b>Reason</b>: You would have to look through all elements possibly.</li>
+        <li><br><b>Reason</b>: You would have to look through all elements possibly.</li></li>
     <li>Finding some element in some Binary Search Tree would require ___O(h)______ operations?
-        <br><b>Reason</b>: it could be a glorified linked list so you'd have to go through the hight of the tree possibly.</li>
+        <li><br><b>Reason</b>: it could be a glorified linked list so you'd have to go through the hight of the tree possibly.</li></li>
     <li>Finding some element in a balanced Binary Search Tree would require _____O(log n)______ operations?
-        <br><b>Reason</b>: Since it's balanced you could do a binary search.</li>
+        <li><br><b>Reason</b>: Since it's balanced you could do a binary search.</li></li>
     <li>Finding some element in an ordered linked list would require ____O(n)______ operations (worst case)?
-        <br><b>Reason</b>: </li>
+        <li><br><b>Reason</b>: </li></li>
     <li>Finding some element in an ordered linked list would require ____O(n)______ operations (average case)?
-        <br><b>Reason</b>: </li>
+        <li><br><b>Reason</b>: </li></li>
     <li>Finding some element in an unordered linked list would require __O(n)______ operations (worst case)?
-        <br><b>Reason</b>: </li>
+        <li><br><b>Reason</b>: </li></li>
 </ol>
 
 8. For each of the following, count the number of operations where some_statement is executed based on the loops
