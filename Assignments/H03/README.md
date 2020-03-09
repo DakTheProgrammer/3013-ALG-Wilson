@@ -1,8 +1,8 @@
 ## Homework - Data Structures and Complexity
 #### Due: 03-13-2020 (Friday @ 3:30 p.m.)
 
-- Given a collection of algorithms that runs on **O(1), O(n log n), O(n), O(n2), O(log n), O(n!)**, order the algorithms from fastest to slowest.
-**O(1), O(n), O(log n), O(n log n), O(n<sup>2</sup>), O(n!)**
+- Given a collection of algorithms that runs on **O(1), O(n log n), O(n), O(n2), O(log n), O(n!)**, order the algorithms from fastest to slowest.<b>
+**Answer: O(1), O(n), O(log n), O(n log n), O(n<sup>2</sup>), O(n!)**
 - Suppose that the complexity of an algorithm is O(n<sup>2</sup>). Suppose that the program that uses the algorithm run in 10 seconds for a data set of size n. If the data size is doubled, how long will it take (approximately) to run the program? 
 
 
