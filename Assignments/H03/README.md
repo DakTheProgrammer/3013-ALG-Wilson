@@ -45,7 +45,7 @@ for (int I = 0; I < n; I +=2)
         {some_statement;}
 ```
 - **Answer**: O(n<sup>2</sup>)
-- **Reason**: This being due to the I runing through n/2 times and the J running through n times and since n is more complex it causes it to be a n times n or n squared operation
+- **Reason**: This is due to the fact that you would be multiplying n from J and 1/2*n of I but you would need to take the constant of I's out and then multiply n by n or just n squared.
 ```cpp
 //C
 for (int j = 1 ; j < n ; j *= 2)
