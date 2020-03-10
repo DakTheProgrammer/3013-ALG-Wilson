@@ -61,7 +61,9 @@ for (int j = 1 ; j < n ; j *= 2)
 search algorithm?
 
 - **Answer**: 9
-- **Reason**: logic - you would continue to cut the array in half until you get to a point when you half 3 giving you a single element which is your 8th time then if that isnt your number then there is a 9th comparison.<br>math - log(1023) = 9.99 meaning that you would only need to compare 9 times due to truncation.
+- **Reason**: 
+    - logic - you would continue to cut the array in half until you get to a point when you half 3 giving you a single element which is your 8th time then if that isnt your number then there is a 9th comparison.
+    - math - log(1023) = 9.99 meaning that you would only need to compare 9 times due to truncation.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
