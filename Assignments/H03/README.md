@@ -44,8 +44,8 @@ for (int I = 0; I < n; I +=2)
     for (int j = 1; j < n; j++)
         {some_statement;}
 ```
-- **Answer**: O(n*(n/2))
-- **Reason**: This being due to the I runing through n/2 times and the J running through n times when multiplied together you get n*(n/2)
+- **Answer**: O(n<sup>2</sup>)
+- **Reason**: This being due to the I runing through n/2 times and the J running through n times and since n is more complex it causes it to be a n times n or n squared operation
 ```cpp
 //C
 for (int j = 1 ; j < n ; j *= 2)
