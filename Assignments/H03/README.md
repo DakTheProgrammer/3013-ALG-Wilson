@@ -6,6 +6,8 @@
 - Suppose that the complexity of an algorithm is O(n<sup>2</sup>). Suppose that the program that uses the algorithm run in 10 seconds for a data set of size n. If the data size is doubled, how long will it take (approximately) to run the program? 
     - **Answer**: 
 
+----------------------------------------------------------------------------------------------------------------------------------
+
 - Complexities : **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!) , O(h)**
 <ol>
     <li>Finding the max element in an unordered stack would require _____O(n)______ operations?
@@ -23,6 +25,8 @@
     <li>Finding some element in an unordered linked list would require __O(n)______ operations (worst case)?
         <ul><li><b>Reason</b>: </li></ul></li>
 </ol>
+
+----------------------------------------------------------------------------------------------------------------------------------
 
 8. For each of the following, count the number of operations where some_statement is executed based on the loops
 
@@ -56,8 +60,10 @@ for (int j = 1 ; j < n ; j *= 2)
 - At most, how many comparisons are required to search a sorted vector of 1023 elements using the binary
 search algorithm?
 
-    - **Answer**: 9
-    - **Reason**: logic - you would continue to cut the array in half until you get to a point when you half 3 giving you a single element which is your 8th time then if that isnt your number then there is a 9th comparison.<br>math - log(1023) = 9.99 meaning that you would only need to compare 9 times due to truncation.
+- **Answer**: 9
+- **Reason**: logic - you would continue to cut the array in half until you get to a point when you half 3 giving you a single element which is your 8th time then if that isnt your number then there is a 9th comparison.<br>math - log(1023) = 9.99 meaning that you would only need to compare 9 times due to truncation.
+
+----------------------------------------------------------------------------------------------------------------------------------
 
 In each of the following examples, please choose the best data structure(s).
 - Options are: **Array, Linked Lists, Stack, Queues, Trees, Graphs, Sets, Hash Tables**. 
