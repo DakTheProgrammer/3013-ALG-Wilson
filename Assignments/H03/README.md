@@ -1,7 +1,7 @@
 ## Homework - Data Structures and Complexity
 #### Due: 03-13-2020 (Friday @ 3:30 p.m.)
 
-- Given a collection of algorithms that runs on **O(1), O(n log n), O(n), O(n2), O(log n), O(n!)**, order the algorithms from fastest to slowest.
+- Given a collection of algorithms that runs on **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!)**, order the algorithms from fastest to slowest.
     - **Answer**: O(1), O(n), O(log n), O(n log n), O(n<sup>2</sup>), O(n!)
 - Suppose that the complexity of an algorithm is O(n<sup>2</sup>). Suppose that the program that uses the algorithm run in 10 seconds for a data set of size n. If the data size is doubled, how long will it take (approximately) to run the program? 
     - **Answer**: 
@@ -36,24 +36,24 @@ for (int I = 0; I < n; I++)
     for (int j = 1; j < n; j++)
         {some_statement;}
 ```
-- **Answer**:
-- **Reason**:
+- **Answer**: O(n<sup>2</sup>)
+- **Reason**: This being due to both i and j run through n times cuasing it to just be n times n.
 ```cpp
 //B
 for (int I = 0; I < n; I +=2)
     for (int j = 1; j < n; j++)
         {some_statement;}
 ```
-- **Answer**:
-- **Reason**:
+- **Answer**: O(n*(n/2))
+- **Reason**: This being due to the I runing through n/2 times and the J running through n times when multiplied together you get n*(n/2)
 ```cpp
 //C
 for (int j = 1 ; j < n ; j *= 2)
     for (int I = 1; i<n; i++)
         {some_statement;} 
 ```
-- **Answer**:
-- **Reason**:
+- **Answer**: O(n log n)
+- **Reason**: This being due to the J runing through log n times due to j*=2 and the I running through n times when multiplied together you get n log n
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,23 +72,23 @@ In each of the following examples, please choose the best data structure(s).
 - Note that there may not be one clear answer.
 
 1. You have to store social network “feeds”. You do not know the size, and things may need to be dynamically added.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Linked list
+    - **Reason**: So that things may be dynamicly alocated and you dont have to worry about space.
 2. You need to store undo/redo operations in a word processor.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Stack
+    - **Reason**: So that at any time when a word is deleted you can pop off the top and when somethings added you push to the top.
 3. You need to evaluate an expression (i.e., parse).
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Stack
+    - **Reason**: So that it can be easily noted what is at the top so that you know when the expression is finished. (ex '[' meets ']' at top of stack)
 4. You need to store the friendship information on a social networking site. I.e., who is friends with who.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Graph
+    - **Reason**: Specificaly a relationship graph that has nodes to who is friends with who.
 5. You need to store an image (1000 by 1000 pixels) as a bitmap.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Array
+    - **Reason**: Easy acces to the colors held in each seprate pixel.
 6. To implement printer spooler so that jobs can be printed in the order of their arrival.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Queue
+    - **Reason**: this is due to the order of arival so that it can efficently be poped by such a factor.
 7. To implement back functionality in the internet browser.
     - **Answer**:
     - **Reason**:
@@ -96,14 +96,14 @@ In each of the following examples, please choose the best data structure(s).
     - **Answer**:
     - **Reason**:
 9. To store a set of fixed key words which are referenced very frequently.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Hash table
+    - **Reason**: the fact that it is a fixed storage and can be accesed quickly.
 10. To store the customer order information in a drive-in burger place. (Customers keep on coming and they have to get their correct food at the payment/food collection window.)
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Queue
+    - **Reason**: a line of customers is a queue FIFO.
 11. To store the genealogy information of biological species.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Tree
+    - **Reason**: the fact that you are tracking ancestory and children is a dead givaway.
 12. To store an alphabetized list of names in order to look up quickly.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Tree
+    - **Reason**: Specifiacally a balanced binary search tree so that look up time is minimal based on there first char.
