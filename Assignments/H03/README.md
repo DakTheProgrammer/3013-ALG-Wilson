@@ -60,10 +60,10 @@ for (int j = 1 ; j < n ; j *= 2)
 - At most, how many comparisons are required to search a sorted vector of 1023 elements using the binary
 search algorithm?
 
-- **Answer**: 9
+- **Answer**: 10
 - **Reason**: 
-    - logic - you would continue to cut the array in half until you get to a point when you half 3 giving you a single element which is your 8th time then if that isnt your number then there is a 9th comparison.
-    - math - log(1023) = 9.99 meaning that you would only need to compare 9 times due to truncation.
+    - logic - You would search through 9 full times if there is an element however since it can search and not be there you would do an extra comparison giving you 10 comparisons. Also wrote a repl.it and tested.
+    - math - log(1023) + 1 = 9.99 meaning that you would only need to compare 9 times due to truncation but you would do an extra comparison for if the searched element isn't ther giving you 10 compairisons.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
