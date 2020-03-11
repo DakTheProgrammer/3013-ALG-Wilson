@@ -4,7 +4,7 @@
 - Given a collection of algorithms that runs on **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!)**, order the algorithms from fastest to slowest.
     - **Answer**: O(1), O(n), O(log n), O(n log n), O(n<sup>2</sup>), O(n!)
 - Suppose that the complexity of an algorithm is O(n<sup>2</sup>). Suppose that the program that uses the algorithm run in 10 seconds for a data set of size n. If the data size is doubled, how long will it take (approximately) to run the program? 
-    - **Answer**: 
+    - **Answer**: 40 seconds
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -19,11 +19,11 @@
     <li>Finding some element in a balanced Binary Search Tree would require _____O(log n)______ operations?
         <ul><li><b>Reason</b>: Since it's balanced you could do a binary search.</li></ul></li>
     <li>Finding some element in an ordered linked list would require ____O(n)______ operations (worst case)?
-        <ul><li><b>Reason</b>: </li></ul></li>
-    <li>Finding some element in an ordered linked list would require ____O(n)______ operations (average case)?
-        <ul><li><b>Reason</b>: </li></ul></li>
+        <ul><li><b>Reason</b>: With a list it doesn't matter if it is ordered worse case you would need to look through all elements.</li></ul></li>
+    <li>Finding some element in an ordered linked list would require ____O(n/2)______ operations (average case)?
+        <ul><li><b>Reason: On average when searching throug the list most elements would be less then what you are searching for halfway throug the list.</b>: </li></ul></li>
     <li>Finding some element in an unordered linked list would require __O(n)______ operations (worst case)?
-        <ul><li><b>Reason</b>: </li></ul></li>
+        <ul><li><b>Reason</b>: With a list it doesn't matter if it is ordered worse case you would need to look through all elements.</li></ul></li>
 </ol>
 
 ----------------------------------------------------------------------------------------------------------------------------------
