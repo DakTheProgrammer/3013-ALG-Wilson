@@ -10,19 +10,19 @@
 
 - Complexities : **O(1), O(n log n), O(n), O(n<sup>2</sup>), O(log n), O(n!) , O(h)**
 <ol>
-    <li>Finding the max element in an unordered stack would require _____O(n)______ operations?
+    <li>Finding the max element in an unordered stack would require <b>O(n)</b> operations?
         <ul><li><b>Reason</b>: You would have to look through all elements possibly.</li></ul></li>
-    <li>Finding the min element in an unordered queue would require _____O(n)______ operations?
+    <li>Finding the min element in an unordered queue would require </b>O(n)</b> operations?
         <ul><li><b>Reason</b>: You would have to look through all elements possibly.</li></ul></li>
-    <li>Finding some element in some Binary Search Tree would require ___O(h)______ operations?
+    <li>Finding some element in some Binary Search Tree would require <b>O(h)</b> operations?
         <ul><li><b>Reason</b>: it could be a glorified linked list so you'd have to go through the hight of the tree possibly.</li></ul></li>
-    <li>Finding some element in a balanced Binary Search Tree would require _____O(log n)______ operations?
+    <li>Finding some element in a balanced Binary Search Tree would require <b>O(log n)</b> operations?
         <ul><li><b>Reason</b>: Since it's balanced you could do a binary search.</li></ul></li>
-    <li>Finding some element in an ordered linked list would require ____O(n)______ operations (worst case)?
+    <li>Finding some element in an ordered linked list would require <b>O(n)</b> operations (worst case)?
         <ul><li><b>Reason</b>: With a list it doesn't matter if it is ordered worse case you would need to look through all elements.</li></ul></li>
-    <li>Finding some element in an ordered linked list would require ____O(n/2)______ operations (average case)?
+    <li>Finding some element in an ordered linked list would require <b>O(n/2)</b> operations (average case)?
         <ul><li><b>Reason:</b> On average when searching throug the list most elements would be less then what you are searching for halfway throug the list.</b>: </li></ul></li>
-    <li>Finding some element in an unordered linked list would require __O(n)______ operations (worst case)?
+    <li>Finding some element in an unordered linked list would require <b>O(n)</b> operations (worst case)?
         <ul><li><b>Reason</b>: With a list it doesn't matter if it is ordered worse case you would need to look through all elements.</li></ul></li>
 </ol>
 
