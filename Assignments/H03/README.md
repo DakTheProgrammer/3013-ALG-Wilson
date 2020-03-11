@@ -12,7 +12,7 @@
 <ol>
     <li>Finding the max element in an unordered stack would require <b>O(n)</b> operations?
         <ul><li><b>Reason</b>: You would have to look through all elements possibly.</li></ul></li>
-    <li>Finding the min element in an unordered queue would require </b>O(n)</b> operations?
+    <li>Finding the min element in an unordered queue would require <b>O(n)</b> operations?
         <ul><li><b>Reason</b>: You would have to look through all elements possibly.</li></ul></li>
     <li>Finding some element in some Binary Search Tree would require <b>O(h)</b> operations?
         <ul><li><b>Reason</b>: it could be a glorified linked list so you'd have to go through the hight of the tree possibly.</li></ul></li>
