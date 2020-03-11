@@ -21,7 +21,7 @@
     <li>Finding some element in an ordered linked list would require ____O(n)______ operations (worst case)?
         <ul><li><b>Reason</b>: With a list it doesn't matter if it is ordered worse case you would need to look through all elements.</li></ul></li>
     <li>Finding some element in an ordered linked list would require ____O(n/2)______ operations (average case)?
-        <ul><li><b>Reason: On average when searching throug the list most elements would be less then what you are searching for halfway throug the list.</b>: </li></ul></li>
+        <ul><li><b>Reason:</b> On average when searching throug the list most elements would be less then what you are searching for halfway throug the list.</b>: </li></ul></li>
     <li>Finding some element in an unordered linked list would require __O(n)______ operations (worst case)?
         <ul><li><b>Reason</b>: With a list it doesn't matter if it is ordered worse case you would need to look through all elements.</li></ul></li>
 </ol>
@@ -90,11 +90,11 @@ In each of the following examples, please choose the best data structure(s).
     - **Answer**: Queue
     - **Reason**: this is due to the order of arival so that it can efficently be poped by such a factor.
 7. To implement back functionality in the internet browser.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Stack
+    - **Reason**: So that the storage of the previous page can be accesed by poping.
 8. To store the possible moves in a chess game.
-    - **Answer**:
-    - **Reason**:
+    - **Answer**: Graph
+    - **Reason**: I went with graph here so that with each move you could move down a node and see all other nodes that are connected to it storing and removing all possible moves with each node treversal. 
 9. To store a set of fixed key words which are referenced very frequently.
     - **Answer**: Hash table
     - **Reason**: the fact that it is a fixed storage and can be accesed quickly.
