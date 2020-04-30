@@ -13,3 +13,8 @@
 | 09     | [09-uVjudge:1172](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/11172)                                     | Program used to learn uVJudge            |
 | 10     | [10-uVjudge:459](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/459)                                        | Program to find total connected graphs   |
 | 11     | [11-uVjudge:484](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/484)                                        | Program to find total apearances in set  |
+| 12     | [12-uVjudge:11597](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/11597)                                    | Program to find total numbers of subtrees|
+| 13     | [13-uVjudge:1112](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/1112)                                      | Program to find shortest path            |
+| 14     | [14-uVjudge:10901](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/10901)                                    | Program that finds fastest ferry dropoff |
+| 15     | [15-uVjudge:10440](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/10440)                                    | Program to find minimum ferry trips      |
+| 16     | [16-uVjudge:10261](https://github.com/DakTheProgrammer/3013-ALG-Wilson/tree/master/Assignments/10261)                                    | Program to find best way to load ferry   |
